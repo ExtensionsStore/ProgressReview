@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Progress Review
+ *
+ * @category    Aydus
+ * @package     Aydus_ProgressReview
+ * @author      Aydus <davidt@aydus.com>
+ */
+-->
+<config>
+    <modules>
+        <Aydus_ProgressReview>
+            <version>1.0.0</version>
+        </Aydus_ProgressReview>
+    </modules>
+    <frontend>
+        <events>
+            <core_block_abstract_to_html_before>
+                <observers>
+                    <insert_progressreview>
+                        <type>model</type>
+                        <class>aydus_progressreview/observer</class>
+                        <method>insertBlock</method>
+                    </insert_progressreview>
+                </observers>
+            </core_block_abstract_to_html_before>
+        </events>
+        <routers>
+            <aydus_progressreview>
+                <use>standard</use>
+                <args>
+                    <module>Aydus_ProgressReview</module>
+                    <frontName>progressreview</frontName>
+                </args>
+            </aydus_progressreview>
+        </routers>
+        <layout>
+            <updates>
+                <aydus_progressreview>
+                    <file>aydus/progressreview.xml</file>
+                </aydus_progressreview>
+            </updates>
+        </layout>    	
+    </frontend>
+    <global>
+        <blocks>
+             <aydus_progressreview>
+                <class>Aydus_ProgressReview_Block</class>
+             </aydus_progressreview>
+        </blocks>
+    </global>    
+</config>

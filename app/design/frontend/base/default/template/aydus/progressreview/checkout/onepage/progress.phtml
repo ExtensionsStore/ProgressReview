@@ -1,0 +1,51 @@
+<?php 
+/**
+ * checkout/onepage/progress.phtml
+ *
+ * @category    Aydus
+ * @package     Aydus_ProgressReview
+ * @author		Aydus <davidt@aydus.com>
+ */
+?>
+<div class="block block-progress opc-block-progress<?php if (Mage::getSingleton('core/design_package')->getPackageName() == 'rwd' && !$this->isCustomerLoggedIn()): ?> opc-block-progress-step-login<?php endif; ?>">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('Your Checkout Progress') ?></span></strong>
+    </div>
+    <div class="block-content">
+        <dl>
+            <?php if ($this->getCheckout()->getStepData('billing', 'is_show')): ?>
+            <div id="billing-progress-opcheckout">
+                <?php echo $this->getChildHtml('billing.progress') ?>
+            </div>
+            <?php endif; ?>
+
+            <?php if ($this->getCheckout()->getStepData('shipping', 'is_show')): ?>
+            <div id="shipping-progress-opcheckout">
+                <?php echo $this->getChildHtml('shipping.progress') ?>
+            </div>
+            <?php endif; ?>
+
+            <?php if ($this->getCheckout()->getStepData('shipping_method', 'is_show')): ?>
+            <div id="shipping_method-progress-opcheckout">
+                <?php echo $this->getChildHtml('shippingmethod.progress') ?>
+            </div>
+            <?php endif; ?>
+
+            <?php if ($this->getCheckout()->getStepData('payment', 'is_show')): ?>
+            <div id="payment-progress-opcheckout">
+                <?php echo $this->getChildHtml('payment.progress') ?>
+            </div>
+            <?php endif; ?>
+            
+            <div id="review-progress">
+				<div class="block-title">
+				    <strong><span><?php echo $this->__('Your Order Summary') ?></span></strong>
+				</div>            
+	            <div id="review-progress-opcheckout">
+	                <?php echo $this->getChildHtml('review.progress') ?>
+	            </div>
+            </div>                
+        </dl>
+    </div>
+</div>
+

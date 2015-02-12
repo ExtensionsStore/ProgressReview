@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/**
+ * ProgressReview layout
+ *
+ * @category    Aydus
+ * @package     Aydus_ProgressReview
+ * @author      Aydus <davidt@aydus.com>
+ */
+-->
+<layout>
+    
+    <!-- Checkout -->
+    <checkout_onepage_index>
+    
+        <reference name="content">
+            <block type="core/template" name="progressreview" template="aydus/progressreview/js.phtml" />
+        </reference>
+            
+    	<reference name="checkout.progress">
+            <action method="setTemplate"><template>aydus/progressreview/checkout/onepage/progress.phtml</template></action>
+            <block type="checkout/onepage_progress" name="review.progress" template="aydus/progressreview/checkout/onepage/progress/review.phtml">
+		        <block type="checkout/onepage_review_info" name="review.progress.info" template="aydus/progressreview/checkout/onepage/progress/review/info.phtml">
+		            <action method="addItemRender"><type>default</type><block>checkout/cart_item_renderer</block><template>aydus/progressreview/checkout/onepage/progress/review/item.phtml</template></action>
+		            <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>aydus/progressreview/checkout/onepage/progress/review/item.phtml</template></action>
+		            <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>aydus/progressreview/checkout/onepage/progress/review/item.phtml</template></action>
+		            <block type="checkout/cart_totals" name="checkout.onepage.review.info.totals" as="totals" template="checkout/onepage/review/totals.phtml">
+		            	
+		            </block>
+		            <block type="core/text_list" name="checkout.onepage.review.info.items.before" as="items_before" translate="label">
+		                <label>Items Before</label>
+		            </block>
+		            <block type="core/text_list" name="checkout.onepage.review.info.items.after" as="items_after" translate="label">
+		                <label>Items After</label>
+		            </block>
+		        </block>                     
+            </block>
+    	</reference>
+    </checkout_onepage_index>
+    
+    <checkout_onepage_progress>
+    	<reference name="root">
+            <block type="checkout/onepage_progress" name="review.progress" template="aydus/progressreview/checkout/onepage/progress/review.phtml">
+		        <block type="checkout/onepage_review_info" name="review.progress.info" output="toHtml" template="aydus/progressreview/checkout/onepage/progress/review/info.phtml">
+		            <action method="addItemRender"><type>default</type><block>checkout/cart_item_renderer</block><template>aydus/progressreview/checkout/onepage/progress/review/item.phtml</template></action>
+		            <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>aydus/progressreview/checkout/onepage/progress/review/item.phtml</template></action>
+		            <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>aydus/progressreview/checkout/onepage/progress/review/item.phtml</template></action>
+		            <block type="checkout/cart_totals" name="checkout.onepage.review.info.totals" as="totals" template="checkout/onepage/review/totals.phtml"/>
+		            <block type="core/text_list" name="checkout.onepage.review.info.items.before" as="items_before" translate="label">
+		                <label>Items Before</label>
+		            </block>
+		            <block type="core/text_list" name="checkout.onepage.review.info.items.after" as="items_after" translate="label">
+		                <label>Items After</label>
+		            </block>
+		        </block>                     
+            </block>
+    	</reference>
+    </checkout_onepage_progress>
+    
+    <checkout_onepage_progress_review>
+    
+        <!-- Mage_Checkout -->
+        <remove name="right"/>
+        <remove name="left"/>
+        
+    	<block type="checkout/onepage_progress" name="root" template="aydus/progressreview/review.phtml">
+	        <block type="checkout/onepage_review_info" name="review.progress.info" output="toHtml" template="aydus/progressreview/checkout/onepage/progress/review/info.phtml">
+	            <action method="addItemRender"><type>default</type><block>checkout/cart_item_renderer</block><template>aydus/progressreview/checkout/onepage/progress/review/item.phtml</template></action>
+	            <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>aydus/progressreview/checkout/onepage/progress/review/item.phtml</template></action>
+	            <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>aydus/progressreview/checkout/onepage/progress/review/item.phtml</template></action>
+	            <block type="checkout/cart_totals" name="checkout.onepage.review.info.totals" as="totals" template="checkout/onepage/review/totals.phtml"/>
+	            <block type="core/text_list" name="checkout.onepage.review.info.items.before" as="items_before" translate="label">
+	                <label>Items Before</label>
+	            </block>
+	            <block type="core/text_list" name="checkout.onepage.review.info.items.after" as="items_after" translate="label">
+	                <label>Items After</label>
+	            </block>
+	        </block>                     
+        </block>
+    </checkout_onepage_progress_review>
+    
+</layout>

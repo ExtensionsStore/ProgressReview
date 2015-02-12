@@ -1,0 +1,5 @@
+app/code/community/Aydus/ProgressReview/                             app/code/community/Aydus/ProgressReview/
+app/design/frontend/base/default/layout/aydus/progressreview.xml     app/design/frontend/base/default/layout/aydus/progressreview.xml
+app/design/frontend/base/default/template/aydus/progressreview/      app/design/frontend/base/default/template/aydus/progressreview/
+app/etc/modules/Aydus_ProgressReview.xml                             app/etc/modules/Aydus_ProgressReview.xml
+skin/frontend/base/default/js/aydus/progressreview.js                skin/frontend/base/default/js/aydus/progressreview.js
