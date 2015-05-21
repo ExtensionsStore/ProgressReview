@@ -6,9 +6,15 @@
  * @author      Aydus <davidt@aydus.com>
  */
 
+if (!window.jQuery) {
+
+	document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><script>jQuery.noConflict();</script>');
+
+}
+
 (function($){
 	
-	$('ol.opc li.section div.step-title').click(function(e){
+	$('ol.opc li.section div.step-title, .changelink a').click(function(e){
 		
 		jQuery('#review-progress').show('slow');
 	});

@@ -11,21 +11,10 @@
 <config>
     <modules>
         <Aydus_ProgressReview>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </Aydus_ProgressReview>
     </modules>
     <frontend>
-        <events>
-            <core_block_abstract_to_html_before>
-                <observers>
-                    <insert_progressreview>
-                        <type>model</type>
-                        <class>aydus_progressreview/observer</class>
-                        <method>insertBlock</method>
-                    </insert_progressreview>
-                </observers>
-            </core_block_abstract_to_html_before>
-        </events>
         <routers>
             <aydus_progressreview>
                 <use>standard</use>
