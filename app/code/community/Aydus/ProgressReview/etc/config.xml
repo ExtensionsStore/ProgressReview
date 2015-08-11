@@ -38,5 +38,13 @@
                 <class>Aydus_ProgressReview_Block</class>
              </aydus_progressreview>
         </blocks>
-    </global>    
+    </global>   
+    <default>
+    	<checkout>
+    		<aydus_progressreview>
+    			<version>1.0.1</version>
+	    		<enabled>1</enabled>
+    		</aydus_progressreview>
+    	</checkout>
+    </default>      
 </config>
