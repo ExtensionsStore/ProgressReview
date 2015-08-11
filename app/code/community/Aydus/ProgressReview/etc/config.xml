@@ -38,6 +38,14 @@
                 <class>Aydus_ProgressReview_Block</class>
              </aydus_progressreview>
         </blocks>
+        <helpers>
+             <aydus_progressreview>
+                <class>Aydus_ProgressReview_Helper</class>
+             </aydus_progressreview>
+             <progressreview>
+                <class>Aydus_ProgressReview_Helper</class>
+             </progressreview>
+        </helpers>
     </global>   
     <default>
     	<checkout>
