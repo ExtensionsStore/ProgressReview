@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * ProgressReview Acl
+ * 
+ * @category    Aydus
+ * @package     Aydus_ProgressReview
+ * @author      Aydus <davidt@aydus.com>
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <aydus_progressreview translate="title" module="aydus_progressreview">
+                                        <title>Progress Review Extension</title>
+                                    </aydus_progressreview>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
